@@ -13,3 +13,27 @@ Example Usage:
     book.add_contact("Alice", "08012345678")
     print(book.search_contact("Alice"))  # "08012345678"
 """
+class ContactBook:
+    def __init__(self):
+        self.contacts=[]
+    def add_contact(self,name,phone_no):
+        self.contacts.append({name:phone_no})
+    def delete_contact(self, name):
+        for contact in self.contacts:
+            if name in contact:
+                self.contacts.remove(contact)
+            else:
+                continue
+    def search_contact(self,name):
+        for contact in self.contacts:
+            if name in contact:
+                return contact[name]
+    def show_contacts(self):
+        return self.contacts
+    
+
+book = ContactBook()
+print(book.show_contacts())
+book.add_contact("Alice", "08012345678")
+print(book.search_contact("Alice"))
+print(book.show_contacts())
