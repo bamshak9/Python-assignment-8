@@ -20,11 +20,13 @@ class BankAccount:
         self.starting_balance=starting_balance
     def deposit(self,amount):
         self.account[self.name]+=amount
+        print("Money succesfully added")
     def withdraw(self,amount):
         if amount>self.account[self.name]:
             print("You have an insufficient account balance")
         else:
             self.account[self.name]-=amount
+            print("Money succesfully withdrawn")
     def get_balance(self):
         return self.account.get(self.name)
 
